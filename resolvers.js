@@ -4,6 +4,7 @@ const resolvers = {
   Query: {
     attraction: (obj, { park, permalink }) => attractionDetail(park, permalink),
     parkAttractions: (obj, { name }) => parkAttractions(name),
+    parkDining: (obj, { name }) => parkDining(name),
   },
   AttractionListItem: {
     detail: ({ park, permalink }) => attractionDetail(park, permalink),
@@ -38,4 +39,8 @@ const parkAttractions = parkName =>
       }),
     );
 
+const parkDining = parkName =>
+  fetch(`https://touringplans.com/${parkName}/dining.json`)
+    .then(res => res.json())
+    .then(diningArrays => diningArrays.flat());
 module.exports = resolvers;

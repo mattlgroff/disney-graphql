@@ -3,11 +3,14 @@ const { gql } = require('apollo-server');
 // The GraphQL schema
 const typeDefs = gql`
   type Query {
-    "Acceptable park names: magicKingdom, animalKingdom, epcot, hollywoodStudios"
+    "Attraction Details - Acceptable park names: magicKingdom animalKingdom epcot hollywoodStudios"
     attraction(park: ParkName!, permalink: String!): AttractionDetail!
 
-    "Acceptable park names: magicKingdom, animalKingdom, epcot, hollywoodStudios"
+    "Park Attractions - Acceptable park names: magicKingdom animalKingdom epcot hollywoodStudios"
     parkAttractions(name: ParkName!): [AttractionListItem]!
+
+    "Park Dining - Acceptable park names: magicKingdom animalKingdom epcot hollywoodStudios"
+    parkDining(name: ParkName!): [DiningDetail]!
   }
 
   "Acceptable park names."
@@ -83,6 +86,68 @@ const typeDefs = gql`
     what_it_is: String
     wheelchair_transfer_code: String
     when_to_go: String
+  }
+
+  "Dining Info for a Park, detailed info is in list form already."
+  type DiningDetail {
+    accepts_reservations: Boolean
+    adult_breakfast_menu_url: String
+    adult_dinner_menu_url: String
+    adult_lunch_menu_url: String
+    bar: String
+    breakfast_hours: String
+    category_code: String!
+    child_breakfast_menu_url: String
+    child_dinner_menu_url: String
+    child_lunch_menu_url: String
+    code: String
+    cost_code: String
+    counter_quality_rating: String
+    counter_value_rating: String
+    created_at: String
+    cuisine: String
+    dinable_id: Int
+    dinable_type: String
+    dinner_hours: String
+    dress: String
+    entree_range: String
+    friendliness_rating: Int
+    house_specialties: String
+    id: Int!
+    kosher_available: Boolean
+    land_id: Int!
+    location_details: String
+    lunch_hours: String
+    mobile_ordering: Boolean
+    name: String!
+    old_attraction_id: Int
+    old_park_id: Int
+    operator_id: Int
+    operator_type: String
+    operator_url: String
+    other_recommendations: String
+    overall_rating: Int
+    parking: String
+    permalink: String!
+    phone_number: String
+    plan_name: String
+    plan_x_coord: Int
+    plan_y_coord: Int
+    portion_size: String
+    requires_credit_card: Boolean
+    requires_pre_payment: Boolean
+    selection: String
+    service_rating: Int
+    setting_atmosphere: String
+    short_name: String
+    sort_name: String
+    summary: String
+    table_quality_rating: Int
+    table_value_rating: Int
+    thumbs_up: Int
+    updated_at: String
+    when_to_go: String
+    wine_list: String
   }
 `;
 
