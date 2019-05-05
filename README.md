@@ -8,7 +8,7 @@ Created by [Matthew Groff](https://github.com/mattlgroff) using the [TouringPlan
 
 ### Sample Query for Park Attractions
 ```
-# Give me all attractions in the Magic Kingdom and include the name and height restriction
+# Give me all attractions in EPCOT and include the name and height restriction
 query {
   parkAttractions(name: epcot){
     name
