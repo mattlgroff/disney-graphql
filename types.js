@@ -10,6 +10,7 @@ const typeDefs = gql`
     parkAttractions(name: ParkName!): [AttractionListItem]!
   }
 
+  "Acceptable park names."
   enum ParkName {
     animalKingdom
     epcot
@@ -17,14 +18,16 @@ const typeDefs = gql`
     magicKingdom
   }
 
+  "Item in the list of attractions for a park."
   type AttractionListItem {
     name: String!
     permalink: String!
     short_name: String!
     park: String!
-    detail: AttractionDetail
+    detail: AttractionDetail!
   }
 
+  "Detailed attraction information."
   type AttractionDetail {
     allow_showtimes_after_close: Boolean
     allow_time_restriction: Boolean
