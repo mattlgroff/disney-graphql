@@ -4,6 +4,9 @@ Created by [Matthew Groff](https://github.com/mattlgroff) using the [TouringPlan
 
 [See a demo](https://disney-graphql.herokuapp.com/)
 
+To run:
+`npm i && npm start`
+
 ## Example Queries
 
 ### Sample Query for Park Attractions
