@@ -1,15 +1,19 @@
-# Unofficial GraphQL Disney API
+# Unofficial GraphQL Disney API 2.0.0
 
 Created by [Matthew Groff](https://github.com/mattlgroff) using the [TouringPlans.com](https://touringplans.com/api) Disney API v1.
 
-[See a demo](https://disney-graphql.herokuapp.com/)
+Changelog
+2.0.0 - Moved into Apollo Azure Function
+
+[See a demo](https://apollo-touringplans.azurewebsites.net/graphql)
 
 To run:
-`npm i && npm start`
+`func host start`
 
 ## Example Queries
 
 ### Sample Query for Park Attractions
+
 ```
 # Give me all attractions in EPCOT and include the name and height restriction
 query {
@@ -23,6 +27,7 @@ query {
 ```
 
 ### Sample Response for Park Attractions
+
 ```
 {
   "data": {
@@ -45,6 +50,7 @@ query {
 ```
 
 ### Sample Query for Park Dining
+
 ```
 # Give me all dining locations in EPCOT and include the name, category_code, and cuisine
 query {
@@ -57,6 +63,7 @@ query {
 ```
 
 ### Sample Response for Park Dining
+
 ```
 {
   "data": {

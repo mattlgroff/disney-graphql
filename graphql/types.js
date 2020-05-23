@@ -1,4 +1,4 @@
-const { gql } = require('apollo-server');
+const { gql } = require('apollo-server-azure-functions');
 
 // The GraphQL schema
 const typeDefs = gql`
