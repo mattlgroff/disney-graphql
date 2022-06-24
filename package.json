@@ -8,6 +8,6 @@
   "dependencies": {
     "apollo-server-azure-functions": "^2.14.2",
     "graphql": "^15.0.0",
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^2.6.7"
   }
 }
